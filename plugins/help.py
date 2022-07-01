@@ -17,7 +17,7 @@ async def _start(client, message):
             if user.status == "kicked":
                await client.send_message(
                    chat_id=message.chat.id,
-                   text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/Techno_Trickop).",
+                   text="ببورە گەورەم, تۆ قەدەغە کراویت لە بەکار هێنانی من. پەیوەندی بکە بە [گرووپی پشتگیری](https://t.me/testmrbarznji).",
                    parse_mode="markdown",
                    disable_web_page_preview=True
                )
@@ -25,11 +25,11 @@ async def _start(client, message):
         except UserNotParticipant:
             await client.send_message(
                 chat_id=message.chat.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**بەڕێزمم بۆ بەکار هێنانی من تکایە جۆینی چەناڵەکەم بکە!**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
+                            InlineKeyboardButton("جۆینی چەناڵی نوێکردنەوە بکە", url=f"https://t.me/{update_channel}")
                         ]
                     ]
                 ),
