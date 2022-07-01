@@ -25,9 +25,9 @@ async def _onUnMuteRequest(client, cb):
             if cb.message.reply_to_message.from_user.id == user_id:
               await cb.message.delete()
           except UserNotParticipant:
-            await client.answer_callback_query(cb.id, text="❗ Join the mentioned 'channel' and press the 'UnMute Me' button again.", show_alert=True)
+            await client.answer_callback_query(cb.id, text="❗ جۆینی ناوبراو 'کەناڵی گرووپ' بکە دواتر پەنجە بنێ بە 'چاڵاکم بکە' بۆ جاڵاک کردنی چات کردن.", show_alert=True)
       else:
-        await client.answer_callback_query(cb.id, text="❗ You are muted by admins for other reasons.", show_alert=True)
+        await client.answer_callback_query(cb.id, text="❗ تۆ بێدەنگ  کرایت لە لایەن بەڕێوەبەرانی گرووپ لەبەر هەندێک هۆکار.", show_alert=True)
     else:
       if not (await client.get_chat_member(chat_id, (await client.get_me()).id)).status == 'administrator':
         await client.send_message(chat_id, f"❗ **{cb.from_user.mention} is trying to UnMute himself but i can't unmute him because i am not an admin in this chat add me as admin again.**\n__#Leaving this chat...__")
@@ -54,15 +54,15 @@ async def _check_member(client, message):
       except UserNotParticipant:
         try:
           sent_message = await message.reply_text(
-              " {} , you are not subscribed to my channel yet. Please join using below button and press the UnMute Me button to unmute yourself.".format(message.from_user.mention, channel, channel),
+              " {} , تۆ ئەندام نیت ببورە لە کەناڵەکەمان☕️.\n__- بەرێزم جۆینی کەناڵی گووپ بکە👍\n- بۆ ئەوەی بتوانی لەم گرووپە چات بکەی📱\n- ئەگەر جۆین نەکەیت من دووبارە ئەم نامەیە دەنێرمەوە و چاتەکانی تۆ دەسرمەوە 📵\n___".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
              reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Subscribe My Channel", url=channel_url)
+                    InlineKeyboardButton("کەناڵی گرووپ", url=channel_url)
                 ],
                 [
-                    InlineKeyboardButton("UnMute Me", callback_data="onUnMuteRequest")
+                    InlineKeyboardButton("ئەکتیڤ کردنی چات", callback_data="onUnMuteRequest")
                 ]
             ]
         )
