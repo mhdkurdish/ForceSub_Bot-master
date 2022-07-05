@@ -82,7 +82,6 @@ async def config(client, message):
   if user.status == "creator" or user.user.id in Config.SUDO_USERS:
     chat_id = message.chat.id
     if len(message.command) > 1:
-      input_str = message.command[1]
       input_str = input_str.replace("@", "")
       if input_str.lower() in (".of", ".off", "disable"):
         sql.disapprove(chat_id)
