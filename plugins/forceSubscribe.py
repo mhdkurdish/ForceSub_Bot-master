@@ -56,7 +56,7 @@ async def _check_member(client, message):
           sent_message = await message.reply_text(
               " {} , ببورە تۆ ئەندام نیت لە کەناڵەکەمان☕️.\n__\n__- بەرێزم جۆینی کەناڵی گووپ بکە👍\n__\n__- بۆ ئەوەی بتوانی لەم گرووپە چات بکەی📱\n__\n__- ئەگەر جۆین نەکەیت من دووبارە ئەم نامەیە دەنێرمەوە و چاتەکانی تۆ دەسرمەوە 📵\n__\n__".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
-            message.replay_photo(photo=random.choise(PICS)
+             replay_photo(photo=random.choise(PICS)
              reply_markup=InlineKeyboardMarkup(
             [
                 [
