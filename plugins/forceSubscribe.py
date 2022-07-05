@@ -76,14 +76,15 @@ async def _check_member(client, message):
         await client.leave_chat(chat_id)
 
 
-@Client.on_message(filters.command(["coffe", "coffe.on"]) & ~filters.private)
+@Client.on_message(filters.command(["coffe.", "coffe.on"]) & ~filters.private)
 async def config(client, message):
   user = await client.get_chat_member(message.chat.id, message.from_user.id)
   if user.status == "creator" or user.user.id in Config.SUDO_USERS:
     chat_id = message.chat.id
     if len(message.command) > 1:
+      input_str = message.command[1]
       input_str = input_str.replace("@", "")
-      if input_str.lower() in (".of", ".off", "disable"):
+      if input_str.lower() in ("of", "off", "disable"):
         sql.disapprove(chat_id)
         await message.reply_text("❌ **Force Subscribe is Disabled Successfully.**")
       elif input_str.lower() in ('clear'):
