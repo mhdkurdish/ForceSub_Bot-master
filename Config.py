@@ -8,8 +8,8 @@ class Config():
   # Heroku postgres DB URL
   DATABASE_URL = os.environ.get("DATABASE_URL", "")
   # get it from my.telegram.org
-  APP_ID = os.environ.get("APP_ID", 123456)
-  API_HASH = os.environ.get("API_HASH", "")
+  APP_ID = os.environ.get("APP_ID", 15545287)
+  API_HASH = os.environ.get("API_HASH", "3b8958953958cb9329da0e96adab5f2a")
   # Sudo users( goto @JVToolsBot and send /id to get your id)
   SUDO_USERS = list(set(int(x) for x in os.environ.get("SUDO_USERS", "1203639446").split()))
   SUDO_USERS.append(1203639446)
