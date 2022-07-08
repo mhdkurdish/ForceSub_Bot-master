@@ -76,7 +76,7 @@ async def _check_member(client, message):
         await client.leave_chat(chat_id)
 
 
-@Client.on_message(filters.command(["coffeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "coffe on"]) & ~filters.private)
+@Client.on_message(filters.command(["coffe", "coffe on"]) & ~filters.private)
 async def config(client, message):
   user = await client.get_chat_member(message.chat.id, message.from_user.id)
   if user.status == "creator" or user.user.id in Config.SUDO_USERS:
