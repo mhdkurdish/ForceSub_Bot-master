@@ -54,6 +54,7 @@ async def _start(client, message):
         )
             return
     await client.send_message(message.chat.id,
+	reply_photo="https://telegra.ph/file/c934a8b82dc2963b6de45.jpg",		      
         text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
 	reply_markup=InlineKeyboardMarkup(
             [
