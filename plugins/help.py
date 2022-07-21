@@ -37,7 +37,7 @@ async def _start(client, message):
             )
             return
         except Exception:
-            await client.send_photo(message.chat.id,
+            await client.replay_photo(message.chat.id,
                 photo="https://telegra.ph/file/c934a8b82dc2963b6de45.jpg",
 		text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
 	        reply_markup=InlineKeyboardMarkup(
