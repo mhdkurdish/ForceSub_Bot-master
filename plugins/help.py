@@ -37,7 +37,7 @@ async def _start(client, message):
             )
             return
         except Exception:
-            await message.send_message(message.chat.id,	      
+            await client.send_message(message.chat.id,	      
                 text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
 	        reply_markup=InlineKeyboardMarkup(
                     [
