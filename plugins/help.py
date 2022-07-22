@@ -55,16 +55,16 @@ async def _start(client, message):
             return
      await client.send_message(message.chat.id,	      
         text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
-	reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("جۆینی چەناڵ نوێکردنەوە بکە", url="https://t.me/mrjoiners"),
-                ],
-                [
-                    InlineKeyboardButton("جۆینی گرووپی پشتگیری بکە", url="https://t.me/testmrbarznji")
-                ]
-            ]
-        ),
+	        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                           InlineKeyboardButton("جۆینی چەناڵ نوێکردنەوە مەکە", url="https://t.me/mrjoiners"),
+                      ],
+                     [
+                           InlineKeyboardButton("جۆینی گرووپی پشتگیری بکە", url="https://t.me/testmrbarznji")
+                     ]
+                 ]
+             ),
         parse_mode="markdown",
         reply_to_message_id=message.message_id
         )
