@@ -53,9 +53,9 @@ async def _start(client, message):
         reply_to_message_id=message.message_id
         )
             return
-     await client.send_message(message.chat.id,	      
+     await client.send_message(message.chat.id,
         text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
-	        reply_markup=InlineKeyboardMarkup(
+	reply_markup=InlineKeyboardMarkup(
                     [
                         [
                            InlineKeyboardButton("جۆینی چەناڵ نوێکردنەوە مەکە", url="https://t.me/mrjoiners"),
