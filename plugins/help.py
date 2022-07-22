@@ -1,7 +1,9 @@
 import logging
 import os
+import random
 from Config import Messages as tr
 from Config import Config as C
+from Config import PICS
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
@@ -39,7 +41,7 @@ async def _start(client, message):
             return
         except Exception:
             await message.reply_photo(message.chat.id,
-		photo=C.PICS,		      
+		photo=random.choice(PICS),		      
                 caption=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
 	        reply_markup=InlineKeyboardMarkup(
                     [
