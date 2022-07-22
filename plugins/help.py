@@ -6,6 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
 UPDATES_CHANNEL = C.UPDATES_CHANNEL
+PICS = C.PICS
 logging.basicConfig(level=logging.INFO)
 
 @Client.on_message(filters.incoming & filters.command(['start']) & filters.private)
