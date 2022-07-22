@@ -38,8 +38,9 @@ async def _start(client, message):
             )
             return
         except Exception:
-            await client.send_message(message.chat.id,
-                text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
+            await message.reply_photo(message.chat.id,
+		photo=C.choice(PICS),		      
+                caption=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
 	        reply_markup=InlineKeyboardMarkup(
                     [
                         [
