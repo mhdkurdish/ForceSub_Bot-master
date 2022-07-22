@@ -14,8 +14,6 @@ class Config():
   SUDO_USERS = list(set(int(x) for x in os.environ.get("SUDO_USERS", "1203639446").split()))
   SUDO_USERS.append(1203639446)
   SUDO_USERS = list(set(SUDO_USERS))
-  # pics
-  PICS = (environ.get('PICS', 'https://telegra.ph/file/7e56d907542396289fee4.jpg')).split()
 
 class Messages():
       HELP_MSG = [
