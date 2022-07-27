@@ -5,9 +5,7 @@ from pyrogram import Client, filters
 from sql_helpers import forceSubscribe_sql as sql
 from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
-
 logging.basicConfig(level=logging.INFO)
-
 static_data_filter = filters.create(lambda _, __, query: query.data == "onUnMuteRequest")
 @Client.on_callback_query(static_data_filter)
 async def _onUnMuteRequest(client, cb):
@@ -34,9 +32,6 @@ async def _onUnMuteRequest(client, cb):
         await client.leave_chat(chat_id)
       else:
         await client.answer_callback_query(cb.id, text="❗ Warning: Don't click the button if you can speak freely.", show_alert=True)
-
-
-
 @Client.on_message((filters.text | filters.media) & ~filters.private & ~filters.edited, group=1)
 async def _check_member(client, message):
   chat_id = message.chat.id
@@ -54,7 +49,7 @@ async def _check_member(client, message):
       except UserNotParticipant:
         try:
           sent_message = await message.reply_text(
-            " {} , ببورە تۆ ئەندام نیت لە کەناڵەکەمان☕️.\n__\n__- بەرێز جۆینی کەناڵی گووپ بکە👍\n__\n__- بۆ ئەوەی بتوانی لەم گرووپە چات بکەی📱\n__\n__- ئەگەر جۆین نەکەیت من دووبارە ئەم نامەیە دەنێرمەوە و چاتەکانی تۆ دەسرمەوە 📵\n__\n__".format(message.from_user.mention, channel, channel),
+              " {} , ببورە تۆ ئەندام نیت لە کەناڵەکەمان☕️.\n__\n__- بەرێزم جۆینی کەناڵی گووپ بکە👍\n__\n__- بۆ ئەوەی بتوانی لەم گرووپە چات بکەی📱\n__\n__- ئەگەر جۆین نەکەیت من دووبارە ئەم نامەیە دەنێرمەوە و چاتەکانی تۆ دەسرمەوە 📵\n__\n__".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
              reply_markup=InlineKeyboardMarkup(
             [
@@ -74,9 +69,7 @@ async def _check_member(client, message):
       except ChatAdminRequired:
         await client.send_message(chat_id, text=f"❗ **I am not an admin in [channel]({channel_url})**\n__Make me admin in the channel and add me again.\n#Leaving this chat...__")
         await client.leave_chat(chat_id)
-
-
-@Client.on_message(filters.command(["coffe.on", "coffe on"]) & ~filters.private)
+@Client.on_message(filters.command(["coffe", "coffe on"]) & ~filters.private)
 async def config(client, message):
   user = await client.get_chat_member(message.chat.id, message.from_user.id)
   if user.status == "creator" or user.user.id in Config.SUDO_USERS:
