@@ -5,7 +5,9 @@ from pyrogram import Client, filters
 from sql_helpers import forceSubscribe_sql as sql
 from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
+
 logging.basicConfig(level=logging.INFO)
+
 static_data_filter = filters.create(lambda _, __, query: query.data == "onUnMuteRequest")
 @Client.on_callback_query(static_data_filter)
 async def _onUnMuteRequest(client, cb):
@@ -23,15 +25,18 @@ async def _onUnMuteRequest(client, cb):
             if cb.message.reply_to_message.from_user.id == user_id:
               await cb.message.delete()
           except UserNotParticipant:
-            await client.answer_callback_query(cb.id, text="❗ جۆینی ناوبراو 'کەناڵی گرووپ' بکە دواتر پەنجە بنێ بە 'چاڵاکم بکە' بۆ جاڵاک کردنی چات کردن.", show_alert=True)
+            await client.answer_callback_query(cb.id, text="❗ Join the mentioned 'channel' and press the 'UnMute Me' button again.", show_alert=True)
       else:
-        await client.answer_callback_query(cb.id, text="❗ تۆ بێدەنگ  کرایت لە لایەن بەڕێوەبەرانی گرووپ لەبەر هەندێک هۆکار.", show_alert=True)
+        await client.answer_callback_query(cb.id, text="❗ You are muted by admins for other reasons.", show_alert=True)
     else:
       if not (await client.get_chat_member(chat_id, (await client.get_me()).id)).status == 'administrator':
         await client.send_message(chat_id, f"❗ **{cb.from_user.mention} is trying to UnMute himself but i can't unmute him because i am not an admin in this chat add me as admin again.**\n__#Leaving this chat...__")
         await client.leave_chat(chat_id)
       else:
         await client.answer_callback_query(cb.id, text="❗ Warning: Don't click the button if you can speak freely.", show_alert=True)
+
+
+
 @Client.on_message((filters.text | filters.media) & ~filters.private & ~filters.edited, group=1)
 async def _check_member(client, message):
   chat_id = message.chat.id
@@ -49,15 +54,15 @@ async def _check_member(client, message):
       except UserNotParticipant:
         try:
           sent_message = await message.reply_text(
-              " {} , ببورە تۆ ئەندام نیت لە کەناڵەکەمان☕️.\n__\n__- بەرێزم جۆینی کەناڵی گووپ بکە👍\n__\n__- بۆ ئەوەی بتوانی لەم گرووپە چات بکەی📱\n__\n__- ئەگەر جۆین نەکەیت من دووبارە ئەم نامەیە دەنێرمەوە و چاتەکانی تۆ دەسرمەوە 📵\n__\n__".format(message.from_user.mention, channel, channel),
+              " {} , you are not subscribed to my channel yet. Please join using below button and press the UnMute Me button to unmute yourself.".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
              reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("کەناڵی گرووپ", url=channel_url)
+                    InlineKeyboardButton("Subscribe My Channel", url=channel_url)
                 ],
                 [
-                    InlineKeyboardButton("چاڵاک کردنی چات", callback_data="onUnMuteRequest")
+                    InlineKeyboardButton("UnMute Me", callback_data="onUnMuteRequest")
                 ]
             ]
         )
@@ -69,7 +74,9 @@ async def _check_member(client, message):
       except ChatAdminRequired:
         await client.send_message(chat_id, text=f"❗ **I am not an admin in [channel]({channel_url})**\n__Make me admin in the channel and add me again.\n#Leaving this chat...__")
         await client.leave_chat(chat_id)
-@Client.on_message(filters.command(["coffe", "coffe on"]) & ~filters.private)
+
+
+@Client.on_message(filters.command(["forcesubscribe", "fsub"]) & ~filters.private)
 async def config(client, message):
   user = await client.get_chat_member(message.chat.id, message.from_user.id)
   if user.status == "creator" or user.user.id in Config.SUDO_USERS:
@@ -77,7 +84,7 @@ async def config(client, message):
     if len(message.command) > 1:
       input_str = message.command[1]
       input_str = input_str.replace("@", "")
-      if input_str.lower() in ("of", "off", "disable"):
+      if input_str.lower() in ("off", "no", "disable"):
         sql.disapprove(chat_id)
         await message.reply_text("❌ **Force Subscribe is Disabled Successfully.**")
       elif input_str.lower() in ('clear'):
