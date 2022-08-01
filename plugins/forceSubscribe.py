@@ -54,12 +54,12 @@ async def _check_member(client, message):
       except UserNotParticipant:
         try:
           sent_message = await message.reply_text(
-              " {} , you are not subscribed to my channel yet. Please join using below button and press the UnMute Me button to unmute yourself.".format(message.from_user.mention, channel, channel),
+              " {} , ببورە تۆ ئەندام نیت لە کەناڵەکەمان☕.\n__\n__- بەرێزم جۆینی کەناڵی گووپ بکە👍\n__\n__- بۆ ئەوەی بتوانی لەم گرووپە چات بکەی📱\n__\n__- ئەگەر جۆین نەکەیت من ناتوانم ڕێگە بدەم چات بکەن لەم گرووپە📵\n__\n__".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
              reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Subscribe My Channel", url=channel_url)
+                    InlineKeyboardButton("جۆین بکە", url=channel_url)
                 ],
                 [
                     InlineKeyboardButton("UnMute Me", callback_data="onUnMuteRequest")
