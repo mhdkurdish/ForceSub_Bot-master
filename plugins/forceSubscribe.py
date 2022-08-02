@@ -25,9 +25,9 @@ async def _onUnMuteRequest(client, cb):
             if cb.message.reply_to_message.from_user.id == user_id:
               await cb.message.delete()
           except UserNotParticipant:
-            await client.answer_callback_query(cb.id, text="❗ Join the mentioned 'channel' and press the 'UnMute Me' button again.", show_alert=True)
+            await client.answer_callback_query(cb.id, text="❗ جۆینی ناوبراو 'کەناڵی گرووپ' بکە دواتر پەنجە بنێ بە 'چاڵاکم بکە' بۆ جاڵاک کردنی چات کردن.", show_alert=True)
       else:
-        await client.answer_callback_query(cb.id, text="❗ You are muted by admins for other reasons.", show_alert=True)
+        await client.answer_callback_query(cb.id, text="❗ تۆ بێدەنگ  کرایت لە لایەن بەڕێوەبەرانی گرووپ لەبەر هەندێک هۆکار. ", show_alert=True)
     else:
       if not (await client.get_chat_member(chat_id, (await client.get_me()).id)).status == 'administrator':
         await client.send_message(chat_id, f"❗ **{cb.from_user.mention} is trying to UnMute himself but i can't unmute him because i am not an admin in this chat add me as admin again.**\n__#Leaving this chat...__")
@@ -59,20 +59,20 @@ async def _check_member(client, message):
              reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("جۆین بکە", url=channel_url)
+                    InlineKeyboardButton("کەناڵی گروپ", url=channel_url)
                 ],
                 [
-                    InlineKeyboardButton("UnMute Me", callback_data="onUnMuteRequest")
+                    InlineKeyboardButton("چاڵاکم بکە", callback_data="onUnMuteRequest")
                 ]
             ]
         )
           )
           await client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
         except ChatAdminRequired:
-          await sent_message.edit("❗ **I am not an admin here.**\n__Make me admin with ban user permission and add me again.\n#Leaving this chat...__")
+          await sent_message.edit("❗ **من بەڕێوەبەر نیم.**\n__دووبارە ئەددم بکە و بمکە بە بەڕێوەبەر و ڕۆڵی باند کردنم پێ بسپێرە.\n#چات جێدێڵم ......__")
           await client.leave_chat(chat_id)
       except ChatAdminRequired:
-        await client.send_message(chat_id, text=f"❗ **I am not an admin in [channel]({channel_url})**\n__Make me admin in the channel and add me again.\n#Leaving this chat...__")
+        await client.send_message(chat_id, text=f"❗ **من ئەدمین نیم لەم [کەناڵە]({channel_url})**\n__دووبارە ئەددم بکە و بمکە بە بەڕێوەبەر و ڕۆڵی باند کردنم پێ بسپێرە.\n#چات جێدێڵم ......__")
         await client.leave_chat(chat_id)
 
 
