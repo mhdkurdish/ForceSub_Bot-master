@@ -19,11 +19,11 @@ class Messages():
       HELP_MSG = [
         ".",
 
-        "**Coffe Joiner**\n__ئەندامانی گرووپ ناچار دەکات جۆینی کەناڵی گرووپ بکەن لەکاتی ناردنی نامە لە گرووپ چات.\nI will mute members if they not joined your channel and tell them to join the channel and unmute themself by pressing a button.__",
+        "**Coffe Joiner**\n__ئەندامانی گرووپ ناچار دەکات جۆینی کەناڵی گرووپ بکەن لەکاتی ناردنی نامە لە گرووپ چات.\n 🔇ئەگەر هاتو ئەندامی گرووپ جۆینی کەناڵی گرووپی نەکردبێت من دەبمە ڕێگر لە چات کردنی لە ناو گرووپ و بێدەنگی دەکەم\n هاوکات ئاگاداریان دەکەمەوە لەوەی دەبێت جۆینی کەناڵی گرووپ بکات ئ دواتر خۆی چاڵاک بکات__",
         
-        "**Setup**\n__First of all add me in the group as admin with ban users permission and in the channel as admin.\nNote: Only creator of the group can setup me and i will leave the chat if i am not an admin in the chat.__",
+        "**✅شێوازی کارا کردن✅**\n__➕سەرەتا من زیاد زیادم بکە لە گرووپەکە و بمکە بە ئەدمین لە گرووپەکەت و کەناڵەکەت.\nتێبینی: تەنها ئەدمینی گشتی گرووپ یان کەناڵەکە دەتوانێت من بەکار بهێنێت ئەگەر هاتوو ڕۆڵی ئەدمینیم پێ نەدرابێت ناچار دەبم گرووپەکە جێبێڵم.__",
         
-        "**Commmands**\n__/ForceSubscribe - To get the current settings.\n/ForceSubscribe no/off/disable - To turn of ForceSubscribe.\n/ForceSubscribe {channel username or channel ID} - To turn on and setup the channel.\n/ForceSubscribe clear - To unmute all members who muted by me.\n/source_code - To get bot source code😍\n\nNote: /FSub is an alias of /ForceSubscribe__",
+        "**⚙️فرمانەکان⚙️**\n__/ForceSubscribe - To get the current settings.\n/ForceSubscribe no/off/disable - To turn of ForceSubscribe.\n/ForceSubscribe {channel username or channel ID} - To turn on and setup the channel.\n/ForceSubscribe clear - To unmute all members who muted by me.\n/source_code - To get bot source code😍\n\nNote: /FSub is an alias of /ForceSubscribe__",
         
        "**Devloped By @aboutez**"
       ]

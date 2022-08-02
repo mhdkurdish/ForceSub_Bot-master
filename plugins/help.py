@@ -17,7 +17,7 @@ async def _start(client, message):
             if user.status == "kicked":
                await client.send_message(
                    chat_id=message.chat.id,
-                   text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/Techno_Trickop).",
+                   text="ببورە بەڕێزم, تۆ قەدەغە کراویت لە بەکار هێنانی من. پەیوەندی بکە بە [گرووپی پشتگیری](https://t.me/qawaxanaykltury).",
                    parse_mode="markdown",
                    disable_web_page_preview=True
                )
@@ -25,11 +25,11 @@ async def _start(client, message):
         except UserNotParticipant:
             await client.send_message(
                 chat_id=message.chat.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**بەڕێزمم بۆ بەکار هێنانی من جۆینی  کەناڵەکەم بکە**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
+                            InlineKeyboardButton("کەناڵی نوێگەری", url=f"https://t.me/{update_channel}")
                         ]
                     ]
                 ),
@@ -42,11 +42,11 @@ async def _start(client, message):
 	        reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                           InlineKeyboardButton("Join Updates Channel", url="https://t.me/Techno_Trickop"),
-                           InlineKeyboardButton("Support Group", url="https://t.me/Techno_Trickop")
+                           InlineKeyboardButton("کەناڵی نوێگەری", url="https://t.me/kteb1"),
+                           InlineKeyboardButton("گرووپی پشتگیری", url="https://t.me/qawaxanaykltury")
                       ],
                      [
-                           InlineKeyboardButton("🧑‍💻Devloper🧑‍💻", url="https://t.me/herox_xd")
+                           InlineKeyboardButton("🧑‍💻داهێنەر🧑‍💻", url="https://t.me/MrMamo007")
                      ]
                  ]
              ),
@@ -59,11 +59,11 @@ async def _start(client, message):
 	reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Join Updates Channel", url="https://t.me/Techno_Trickop"),
-                    InlineKeyboardButton("Support Group", url="https://t.me/Techno_Trickop")
+                    InlineKeyboardButton("کەناڵی نوێگەری", url="https://t.me/kteb1"),
+                    InlineKeyboardButton("گرووپی پشتگیری", url="https://t.me/qawaxanaykltury")
                 ],
                 [
-                    InlineKeyboardButton("🧑‍💻Devloper🧑‍💻", url="https://t.me/herox_xd")
+                    InlineKeyboardButton("🧑‍💻داهێنەر🧑‍💻", url="https://t.me/MrMamo007")
                 ]
             ]
         ),
@@ -78,15 +78,15 @@ async def _source_code(client, message):
         text=tr.SC_MSG.format(message.from_user.first_name, message.from_user.id),
 	reply_markup=InlineKeyboardMarkup(
             [
+                # [
+                #     InlineKeyboardButton("Souce Code", url="https://github.com/sjmxaditi/ForceSub_Bot")
+                # ],
                 [
-                    InlineKeyboardButton("Souce Code", url="https://github.com/sjmxaditi/ForceSub_Bot")
+                    InlineKeyboardButton("کەناڵی نوێگەری", url="https://t.me/kteb1"),
+                    InlineKeyboardButton("گرووپی پشتگیری", url="https://t.me/qawaxanaykltury")
                 ],
                 [
-                    InlineKeyboardButton("Join Updates Channel", url="https://t.me/Techno_Trickop"),
-                    InlineKeyboardButton("Support Group", url="https://t.me/Techno_Trickop")
-                ],
-                [
-                    InlineKeyboardButton("🧑‍💻Devloper🧑‍💻", url="https://t.me/herox_xd")
+                    InlineKeyboardButton("🧑‍💻داهێنەر🧑‍💻", url="https://t.me/MrMamo007")
                 ]
             ]
         ),
@@ -103,7 +103,7 @@ async def _help(client, message):
             if user.status == "kicked":
                await client.send_message(
                    chat_id=message.chat.id,
-                   text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/Techno_Trickop).",
+                   text="ببورە گەورەم, تۆ قەدەغە کراویت لە بەکار هێنانی من. پەیوەندی بکە بە [گرووپی پشتگیری](https://t.me/qawaxanaykltury).",
                    parse_mode="markdown",
                    disable_web_page_preview=True
                )
@@ -111,11 +111,11 @@ async def _help(client, message):
         except UserNotParticipant:
             await client.send_message(
                 chat_id=message.chat.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**بەڕێزمم بۆ بەکار هێنانی من جۆینی  کەناڵەکەم بکە**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
+                            InlineKeyboardButton("کەناڵی نوێگەری", url=f"https://t.me/{update_channel}")
                         ]
                     ]
                 ),
@@ -125,7 +125,7 @@ async def _help(client, message):
         except Exception:
             await client.send_message(
                 chat_id=message.chat.id,
-                text="Hey use this command in my pm. \nFor more help ask in my [Support Group](https://t.me/Techno_Trickop).",
+                text="سڵاو، ئەم فرمانەم بە نامەی تایبەت پێبدە! \nبۆ وەرگرتنی زانیاری زیاتر پرسیار بکە لە [گرووپی پشتگیری](https://t.me/qawaxanaykltury).",
                 parse_mode="markdown",
                 disable_web_page_preview=True)
             return
