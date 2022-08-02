@@ -25,7 +25,7 @@ class Messages():
         
         "**⚙️فرمانەکان⚙️**\n__/ForceSubscribe - To get the current settings.\n/ForceSubscribe no/off/disable - To turn of ForceSubscribe.\n/ForceSubscribe {channel username or channel ID} - To turn on and setup the channel.\n/ForceSubscribe clear - To unmute all members who muted by me.\n/source_code - To get bot source code😍\n\nNote: /FSub is an alias of /ForceSubscribe__",
         
-       "**Devloped By @aboutez**"
+       "**داهێنراوە لە لایەن [گرووپی پشتگیری](https://t.me/MrMamo007).**"
       ]
       SC_MSG = "**Hey [{}](tg://user?id={})**\n click on below👇 button to get my source code, for more help ask in my support group👇👇 "
 
