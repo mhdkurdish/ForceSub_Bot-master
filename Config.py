@@ -21,9 +21,9 @@ class Messages():
 
         "**Coffe Joiner**\n\n**ئەندامانی گرووپ ناچار دەکات جۆینی کەناڵی گرووپ بکەن لەکاتی ناردنی نامە لە گرووپ چات.\n\n 🔇 ئەگەر هاتو ئەندامی گرووپ جۆینی کەناڵی گرووپی نەکردبێت من مافی چاتەکەی نا چاڵاک دەکەم\n\n هاوکات ئاگاداری دەکەمەوە لەوەی دەبێت جۆینی کەناڵی گرووپ بکات و دواتر چاتەکەت چاڵاک بکات.**",
         
-        "**✅شێوازی کارا کردن✅**\n\n➕سەرەتا من زیاد زیادم بکە لە گرووپەکە و بمکە بە ئەدمین لە گرووپەکەت و کەناڵەکەت.\n\nتێبینی: تەنها ئەدمینی گشتی گرووپ یان کەناڵەکە دەتوانێت من بەکار بهێنێت ئەگەر هاتوو ڕۆڵی ئەدمینیم پێ نەدرابێت ناچار دەبم گرووپەکە جێبێڵم.**",
+        "**✅شێوازی کارا کردن✅**\n\n**➕سەرەتا من زیاد زیادم بکە لە گرووپەکە و بمکە بە ئەدمین لە گرووپەکەت و کەناڵەکەت.\n\nتێبینی: تەنها ئەدمینی گشتی گرووپ یان کەناڵەکە دەتوانێت من بەکار بهێنێت ئەگەر هاتوو ڕۆڵی ئەدمینیم پێ نەدرابێت ناچار دەبم گرووپەکە جێبێڵم.**",
         
-        "**⚙️فرمانەکان⚙️**\n__/ForceSubscribe - To get the current settings.\n/ForceSubscribe no یان off یانdisable - بۆ نا کارا کردنی بۆت\n/ForceSubscribe {channel username or channel ID} - To turn on and setup the channel.\n/ForceSubscribe clear - To unmute all members who muted by me.\n/source_code - To get bot source code😍\n\nتێبینی: دەتوانیت فرمانی /coffe بەکار بێنیت وەک کورت کراوەیەک لە جیاتی/coffejoin**",
+        "**⚙️فرمانەکان⚙️**\n**/ForceSubscribe - To get the current settings.\n/ForceSubscribe no یان off یانdisable - بۆ نا کارا کردنی بۆت\n/ForceSubscribe {channel username or channel ID} - To turn on and setup the channel.\n/ForceSubscribe clear - To unmute all members who muted by me.\n/source_code - To get bot source code😍\n\nتێبینی: دەتوانیت فرمانی /coffe بەکار بێنیت وەک کورت کراوەیەک لە جیاتی/coffejoin**",
         
        "**داهێنراوە لە لایەن @MrMamo007.**"
       ]
